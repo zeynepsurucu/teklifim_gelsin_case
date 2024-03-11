@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teklifim_gelsin_case/screens/offers_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -105,7 +106,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.greenAccent),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => OffersScreen(amount: amountController.text, maturity: maturityController.text),
+                            ),
+                          );
+                        },
                         child: const Text(
                           'Hesapla',
                           style: TextStyle(
